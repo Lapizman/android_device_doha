@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_doha.mk
+    $(LOCAL_DIR)/twrp_doha.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_doha-user \
-    omni_doha-userdebug \
-    omni_doha-eng
+    twrp_doha-user \
+    twrp_doha-userdebug \
+    twrp_doha-eng
