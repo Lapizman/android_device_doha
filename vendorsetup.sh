@@ -1,10 +1,2 @@
-#
-# Copyright (C) 2025 The Android Open Source Project
-# Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
-add_lunch_combo omni_doha-user
-add_lunch_combo omni_doha-userdebug
-add_lunch_combo omni_doha-eng
+# This file is intentionally left empty.
+# Device lunch combos should be defined in AndroidProducts.mk using COMMON_LUNCH_CHOICES.
