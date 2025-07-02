@@ -11,19 +11,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Inherit from doha device
-$(call inherit-product, device/motorola/doha/device.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/twrp/config/common.mk)
 
+# Release name
+PRODUCT_RELEASE_NAME := doha
+
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := doha
 PRODUCT_NAME := twrp_doha
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto g(8) plus
 PRODUCT_MANUFACTURER := motorola
 
-PRODUCT_GMS_CLIENTID_BASE := android-motorola
+TARGET_VENDOR_PRODUCT_NAME := doha
+TARGET_VENDOR_DEVICE_NAME := doha
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="doha_retail-user 10 QPIS30.28-Q3-28-26-4-1-7 f0f57 release-keys"
-
-BUILD_FINGERPRINT := motorola/doha_retail/doha:10/QPIS30.28-Q3-28-26-4-1-7/f0f57:user/release-keys
